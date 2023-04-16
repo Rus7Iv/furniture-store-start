@@ -1,0 +1,33 @@
+.image {
+  width: 400px;
+  margin: 10px;
+}
+
+.info {
+  margin: 30px;
+}
+
+.title {
+  text-align: center;
+}
+
+.page {
+  display: flex;
+}
+
+.desc {
+  font-size: 30px;
+}
+
+.price {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.loading {
+  font-size: 50px;
+  font-weight: 500;
+
+  display: grid;
+  place-items: center;
+}

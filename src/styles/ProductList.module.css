@@ -1,0 +1,22 @@
+.card {
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+}
+
+.label {
+  font-size: 30px;
+  font-weight: 500;
+
+  position: absolute;
+  bottom: 0;
+}
