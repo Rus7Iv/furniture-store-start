@@ -4,15 +4,10 @@
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
-  /* --background-color: black; */
 }
 
 main {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center; */
-  margin: 20px 40px;
+  margin: 120px 40px 20px 40px;
   min-height: 100vh;
+  /* min-width: 400px; */
 }

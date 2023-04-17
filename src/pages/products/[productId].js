@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import styles from "../../styles/ProductPage.module.css";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const ProductPage = () => {
   const router = useRouter();
@@ -30,21 +32,25 @@ const ProductPage = () => {
   }
 
   return (
-    <main>
-      <div className={styles.page}>
-        <img
-          src={product.image}
-          width={200}
-          alt={product.title}
-          className={styles.image}
-        />
-        <div className={styles.info}>
-          <h1 className={styles.title}>{product.title}</h1>
-          <p className={styles.desc}>{product.description}</p>
-          <p className={styles.price}>{product.price} ₽</p>
+    <>
+      <Navigation />
+      <main>
+        <div className={styles.page}>
+          <img
+            src={product.image}
+            width={200}
+            alt={product.title}
+            className={styles.image}
+          />
+          <div className={styles.info}>
+            <h1 className={styles.title}>{product.title}</h1>
+            <p className={styles.desc}>{product.description}</p>
+            <p className={styles.price}>{product.price} ₽</p>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 };
 

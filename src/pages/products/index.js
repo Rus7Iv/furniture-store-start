@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/firebase";
 import styles from "../../styles/ProductList.module.css";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
@@ -22,25 +24,29 @@ function ProductsPage() {
   }, []);
 
   return (
-    <main>
-      <h1>Каталог товаров</h1>
-      <ul className={styles.list}>
-        {products.map((product) => (
-          <Link
-            legacyBehavior
-            href={`/products/${product.id}`}
-            key={product.id}
-          >
-            <div className={styles.card}>
-              <h2>{product.title}</h2>
-              <img src={product.image} width={200} alt={product.title} />
-              <p className={styles.label}>{product.price} ₽</p>
-            </div>
-          </Link>
-          // </li>
-        ))}
-      </ul>
-    </main>
+    <>
+      <Navigation />
+      <main>
+        <h1>Каталог товаров</h1>
+        <ul className={styles.list}>
+          {products.map((product) => (
+            <Link
+              legacyBehavior
+              href={`/products/${product.id}`}
+              key={product.id}
+            >
+              <div className={styles.card}>
+                <h2>{product.title}</h2>
+                <img src={product.image} width={200} alt={product.title} />
+                <p className={styles.label}>{product.price} ₽</p>
+              </div>
+            </Link>
+            // </li>
+          ))}
+        </ul>
+      </main>
+      <Footer />
+    </>
   );
 }
 

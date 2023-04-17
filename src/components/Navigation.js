@@ -1,18 +1,32 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import styles from "../styles/Navbar.module.css";
 
 const Navigation = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className={styles.navbar} expand="lg">
       <Container>
-        <Navbar.Brand href="/">Test-store</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <h1 className={styles.brand}>Furniture</h1>{" "}
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/products">Catalog</Nav.Link>
-            <Nav.Link href="/cart">Cart</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            {/* <div className={styles.nav_items}> */}
+            <Nav.Link href="/" className={styles.link}>
+              Home
+            </Nav.Link>
+            <Nav.Link href="/products" className={styles.link}>
+              Catalog
+            </Nav.Link>
+            <Nav.Link href="/cart" className={styles.link}>
+              Cart
+            </Nav.Link>
+            <NavDropdown
+              title="Dropdown"
+              id="basic-nav-dropdown"
+              className={styles.link}
+            >
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -23,6 +37,7 @@ const Navigation = () => {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
+            {/* </div> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -32,38 +47,27 @@ const Navigation = () => {
 
 export default Navigation;
 
+// import React from "react";
 // import Link from "next/link";
-// import { useState } from "react";
 // import styles from "../styles/Navbar.module.css";
 
-// export default function Navbar() {
-//   const [showMenu, setShowMenu] = useState(false);
-
-//   const toggleMenu = () => {
-//     setShowMenu(!showMenu);
-//   };
-
+// const Navigation = () => {
 //   return (
-//     <nav className={styles.navbar}>
-//       <div className={styles.logo}>
-//         <Link href="/">My App</Link>
+//     <navbar className={styles.navbar}>
+//       <h1>NavBar</h1>
+//       <div className={styles.nav_items}>
+//         <Link href={"/"} className={styles.link}>
+//           Home
+//         </Link>
+//         <Link href={"/products"} className={styles.link}>
+//           Catalog
+//         </Link>
+//         <Link href={"/cart"} className={styles.link}>
+//           Cart
+//         </Link>
 //       </div>
-//       <ul className={`${styles.menuItems} ${showMenu ? styles.showMenu : ""}`}>
-//         <li>
-//           <Link href="/">Home</Link>
-//         </li>
-//         <li>
-//           <Link href="/about">About</Link>
-//         </li>
-//         <li>
-//           <Link href="/contact">Contact</Link>
-//         </li>
-//       </ul>
-//       <div className={styles.menuIcon} onClick={toggleMenu}>
-//         <div className={styles.menuIconBars}></div>
-//         <div className={styles.menuIconBars}></div>
-//         <div className={styles.menuIconBars}></div>
-//       </div>
-//     </nav>
+//     </navbar>
 //   );
-// }
+// };
+
+// export default Navigation;
