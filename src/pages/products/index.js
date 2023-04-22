@@ -6,6 +6,10 @@ import styles from "../../styles/ProductList.module.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 function ProductsPage() {
   const [products, setProducts] = useState([]);
 
@@ -37,11 +41,10 @@ function ProductsPage() {
             >
               <div className={styles.card}>
                 <h2>{product.title}</h2>
-                <img src={product.image} width={200} alt={product.title} />
+                <img src={product.image[0]} width={200} alt={product.title} />
                 <p className={styles.label}>{product.price} ₽</p>
               </div>
             </Link>
-            // </li>
           ))}
         </ul>
       </main>

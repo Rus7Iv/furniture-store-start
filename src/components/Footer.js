@@ -11,7 +11,7 @@ const Footer = () => {
               <span className={styles.logo_name}>Furniture</span>
             </div>
             <div className={styles.desc_area}>
-              <p>Authors: Rus7Iv</p>
+              <p>Author: Rus7Iv</p>
             </div>
             <div className={styles.social_media}>
               <a href="#">

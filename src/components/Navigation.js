@@ -22,20 +22,18 @@ const Navigation = () => {
             <Nav.Link href="/cart" className={styles.link}>
               Cart
             </Nav.Link>
+            <Nav.Link href="/cartpage" className={styles.link}>
+              CartPage
+            </Nav.Link>
             <NavDropdown
-              title="Dropdown"
+              title="Sale"
               id="basic-nav-dropdown"
               className={styles.link}
             >
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">Category</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Catalog</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.4">Archive</NavDropdown.Item>
             </NavDropdown>
             {/* </div> */}
           </Nav>

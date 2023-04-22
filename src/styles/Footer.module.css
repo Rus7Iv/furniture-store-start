@@ -13,7 +13,7 @@
 
 .container {
   /* max-width: 1240px; */
-  padding: 30px 40px;
+  padding: 20px 30px;
   margin: auto;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .logo_area .logo_name {
-  font-size: 1.5rem;
+  font-size: 30px;
   font-weight: 700;
   margin: 0 1rem;
   color: var(--secondary-color);
@@ -45,6 +45,7 @@
 .desc_area {
   max-width: 500px;
   margin-bottom: 1.25rem;
+  margin-left: 1rem;
 }
 
 .desc_area p {
@@ -56,6 +57,7 @@
 .social_media a {
   color: #828282;
   margin-right: 22px;
+  margin-left: 1rem;
   font-size: 24px;
 }
 
