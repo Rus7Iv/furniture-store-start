@@ -22,9 +22,6 @@ const Navigation = () => {
             <Nav.Link href="/cart" className={styles.link}>
               Cart
             </Nav.Link>
-            <Nav.Link href="/cartpage" className={styles.link}>
-              CartPage
-            </Nav.Link>
             <NavDropdown
               title="Sale"
               id="basic-nav-dropdown"

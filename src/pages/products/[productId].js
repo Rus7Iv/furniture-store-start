@@ -150,10 +150,6 @@ const ProductPage = () => {
     }
   }, [productId]);
 
-  const addToCart = () => {
-    setCart([...cart, product]);
-  };
-
   if (!product) {
     return (
       <>
@@ -208,6 +204,13 @@ const ProductPage = () => {
     nextArrow: <CustomNextArrow />,
   };
 
+  const addToCart = (product) => {
+    const existingItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const updatedItems = [...existingItems, product];
+    localStorage.setItem("cart", JSON.stringify(updatedItems));
+    setCart(updatedItems);
+  };
+
   return (
     <>
       <Navigation />
@@ -231,7 +234,9 @@ const ProductPage = () => {
             <h1 className={styles.title}>{product.title}</h1>
             <p className={styles.desc}>{product.description}</p>
             <p className={styles.price}>{product.price} ₽</p>
-            <button onClick={addToCart}>Добавить в корзину</button>
+            <button onClick={() => addToCart(product)}>
+              Добавить в корзину
+            </button>
           </div>
         </div>
       </main>
