@@ -5,7 +5,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../../lib/firebase";
-import styles from "../styles/SingupLogin.module.css";
+import styles from "../../styles/SingupLogin.module.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
