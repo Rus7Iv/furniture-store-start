@@ -1,10 +1,18 @@
-import { useState } from "react";
-import Login from "../components/Login";
-import Signup from "../components/Singup";
+import { useState, useEffect } from "react";
+import Login from "./Login";
+import Signup from "./Singup";
 
 const Auth = () => {
   const [showSignup, setShowSignup] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    const storedValue =
+      typeof window !== "undefined" && localStorage.getItem("isAuthenticated");
+    return storedValue !== null ? storedValue === "true" : false;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("isAuthenticated", isAuthenticated);
+  }, [isAuthenticated]);
 
   const handleSuccessfulAuth = () => {
     setIsAuthenticated(true);

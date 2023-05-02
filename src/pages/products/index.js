@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/firebase";
+import { db } from "@/lib/firebase";
 import styles from "../../styles/ProductList.module.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";

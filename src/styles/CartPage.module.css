@@ -1,14 +1,15 @@
 /* Стили для страницы корзины */
-.page {
+/* .page {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-}
+} */
 
 .title {
-  font-size: 2rem;
+  /* font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; */
+  max-width: 300px;
 }
 
 .empty {
@@ -30,7 +31,7 @@
 }
 
 .image {
-  flex: 0 0 100px;
+  flex: 0 0 200px;
   margin-right: 1rem;
 }
 
@@ -42,12 +43,13 @@
 
 .info {
   flex: 1;
+  display: inline-block;
 }
 
 .info h2 {
   font-size: 1.5rem;
   font-weight: bold;
-  margin: 0 0 0.5rem 0;
+  /* margin: 0 0 0.5rem 0; */
 }
 
 .info p {
