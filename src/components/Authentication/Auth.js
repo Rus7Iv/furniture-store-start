@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Login from "./Login";
-import Signup from "./Singup";
+import Signup from "./Signup";
 
 const Auth = () => {
   const [showSignup, setShowSignup] = useState(false);
@@ -20,6 +20,7 @@ const Auth = () => {
 
   const handleLogout = () => {
     setIsAuthenticated(false);
+    localStorage.removeItem("isAuthenticated"); // удаление значения из localStorage
   };
 
   return (

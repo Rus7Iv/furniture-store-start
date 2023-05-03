@@ -34,7 +34,7 @@ const CartPage = () => {
       const existingItems = JSON.parse(localStorage.getItem("cart")) || [];
       const updatedItems = [...existingItems];
       if (typeof updatedItems[index].quantity !== "number") {
-        updatedItems[index].quantity = 1; // изменяем количество на 1
+        updatedItems[index].quantity = 1;
       } else {
         updatedItems[index].quantity += 1;
       }
@@ -53,6 +53,8 @@ const CartPage = () => {
         typeof updatedItems[index].quantity !== "number" ||
         updatedItems[index].quantity === 1
       ) {
+        // remove the item if its quantity is 1 or less
+        removeItem(index);
         return;
       }
       updatedItems[index].quantity -= 1;
@@ -63,8 +65,8 @@ const CartPage = () => {
     }
   };
 
-  // вычисляем общую стоимость всех товаров в корзине
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
   return (
     <>
       <Navigation />
@@ -78,28 +80,48 @@ const CartPage = () => {
               {cart.map((item, index) => (
                 <li key={index} className={styles.item}>
                   <div className={styles.image}>
-                    <img src={item.image[0]} alt={item.title} />
+                    <img src={item.image[0]} alt={item.name} />
                   </div>
-                  <div className={styles.info}>
-                    <h2 className={styles.title}>{item.title}</h2>
+                  <div className={styles.details}>
+                    <h2 className={styles.name}>{item.name}</h2>
+                    <p className={styles.price}>
+                      {item.price.toLocaleString()} руб.
+                    </p>
                     <div className={styles.quantity}>
-                      <button onClick={() => decrementQuantity(index)}>
+                      <button
+                        onClick={() => decrementQuantity(index)}
+                        className={styles.button}
+                      >
                         -
                       </button>
-                      <span>{item.quantity}</span>
-                      <button onClick={() => incrementQuantity(index)}>
+                      <span className={styles.value}>{item.quantity}</span>
+                      <button
+                        onClick={() => incrementQuantity(index)}
+                        className={styles.button}
+                      >
                         +
                       </button>
                     </div>
-                    <button onClick={() => removeItem(index)}>Удалить</button>
-                    <p className={styles.price}>{item.price} ₽</p>
+                    <button
+                      onClick={() => removeItem(index)}
+                      className={styles.remove}
+                    >
+                      Удалить
+                    </button>
                   </div>
                 </li>
               ))}
             </ul>
-            <div className={styles.summary}>
-              <p>Итого: {total} ₽</p>
-              {isAuthenticated && <button>Оформить заказ</button>}
+            <div className={styles.total}>
+              <p>Итого: {total.toLocaleString()} руб.</p>
+              {isAuthenticated ? (
+                <button className={styles.button}>Оформить заказ</button>
+              ) : (
+                <p className={styles.auth}>
+                  Для оформления заказа необходимо{" "}
+                  <a href="/">войти в аккаунт</a>
+                </p>
+              )}
             </div>
           </div>
         )}

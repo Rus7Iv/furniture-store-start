@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import styles from "../styles/Navbar.module.css";
+import Link from "next/link";
 
 const Navigation = () => {
   return (
@@ -13,16 +14,16 @@ const Navigation = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             {/* <div className={styles.nav_items}> */}
-            <Nav.Link href="/" className={styles.link}>
+            <Link href="/" className={styles.link}>
               Home
-            </Nav.Link>
-            <Nav.Link href="/products" className={styles.link}>
+            </Link>
+            <Link href="/products" className={styles.link}>
               Catalog
-            </Nav.Link>
-            <Nav.Link href="/cart" className={styles.link}>
+            </Link>
+            <Link href="/cart" className={styles.link}>
               Cart
-            </Nav.Link>
-            <NavDropdown
+            </Link>
+            {/* <NavDropdown
               title="Sale"
               id="basic-nav-dropdown"
               className={styles.link}
@@ -31,7 +32,7 @@ const Navigation = () => {
               <NavDropdown.Item href="#action/3.3">Catalog</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Archive</NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
             {/* </div> */}
           </Nav>
         </Navbar.Collapse>
