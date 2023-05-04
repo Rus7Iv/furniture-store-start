@@ -104,11 +104,15 @@ const Navigation = () => {
               Корзина
             </Link>
           </Nav>
-          {isAuthenticated ? (
-            <Link
-              href={"/account"}
-              className={`${styles.link} ${styles.btn_lk}`}
-            >
+          <Link
+            href={"/login"}
+            className={`${styles.link} ${styles.btn_lk}`}
+            onClick={() => handleAuthentication(true)}
+          >
+            Вход
+          </Link>
+          {/* {isAuthenticated ? (
+            <Link href={"/login"} className={`${styles.link} ${styles.btn_lk}`}>
               Личный кабинет
             </Link>
           ) : (
@@ -119,7 +123,7 @@ const Navigation = () => {
             >
               Вход
             </Link>
-          )}
+          )} */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
